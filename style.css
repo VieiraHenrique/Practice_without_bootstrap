@@ -1,0 +1,372 @@
+/**** FONT IMPORT *****/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;600&display=swap'); /* INSERT FONT */
+
+/***** VARIABLES ********/
+
+:root {
+    --font-one: 'Baloo Tamma 2', sans-serif; /* INSERT FONT */
+    --color-primary: #E9695B;
+    --color-primary-light: #f7a79e;
+    --color-primary-dark: #b93e30;
+    --color-secondary: #2C3049;
+    --color-secondary-light: #555a7e;
+    --white: #fff;
+    --black: #4e4e4e;
+    --grey-dark: rgb(88, 88, 88);
+    --grey-light: rgb(202, 202, 202);
+    --grey-extra-light: rgb(241, 241, 241);
+    
+}
+
+/***** BASIC RESET *******/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62.5%; /* Establish 1rem = 10px */
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-one), sans-serif;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    background: var(--color-primary);
+    border: 3px solid var(--color-primary);
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.separator-top {
+    margin-top: 4rem;
+}
+.padding-vertical {
+    padding: 4rem 0;
+}
+
+.grid {
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+/************ MOBILE STYLES ****************/
+
+#toggle {
+    display: none;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+}
+
+.nav__logo h1 {
+    font-size: 3rem;
+}
+
+.nav__logo span {
+    color: var(--color-primary);
+}
+
+.nav__menu ul {
+    position: fixed;
+    z-index: 10;
+    background: var(--grey-extra-light);
+    top: 0;
+    right: -60vw;
+    height: 100vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: right .5s ease;
+}
+
+.nav__menu ul li a {
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.nav__menu label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.nav__menu label span,
+.nav__menu label span::before,
+.nav__menu label span::after {
+    position: relative;
+    z-index: 100;
+    display: block;
+    width: 3.5rem;
+    height: .4rem;
+    background: var(--color-primary);
+}
+
+.nav__menu label span::before,
+.nav__menu label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav__menu label span::before {
+    bottom: 1rem;
+}
+.nav__menu label span::after {
+    top: 1rem;
+}
+
+#toggle:checked ~ ul {
+    right: 0;
+}
+
+
+.hero__text {
+    grid-column: 1/7;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.hero__text .btn {
+    margin-top: 2rem;
+    align-self: center;
+}
+
+.hero__text h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+
+.hero__img {
+    margin-top: 2rem;
+    grid-column: 1/7;
+}
+
+.cards__item {
+    grid-column: 1/7;
+    text-align: center;
+}
+
+.cards__item i {
+    color: var(--color-primary);
+    font-size: 4rem;
+}
+
+.cards__item h3 {
+    font-size: 2.5rem;
+}
+
+.quote {
+    background: var(--color-secondary);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.quote h2 {
+    font-weight: 400;
+}
+
+.gallery {
+    background: var(--grey-extra-light);
+    padding-bottom: 5rem;
+}
+
+.gallery img {
+    grid-column: span 6;
+
+}
+
+.gallery h2 {
+    text-align: center;
+    padding: 6rem 0;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+
+.contact__title h2 {
+    text-align: center;
+    padding: 4rem 0;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.contact__form form {
+    grid-column: 1/7;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    padding: 4rem;
+}
+
+.form__item {
+    margin-bottom: 3rem;
+}
+
+.form__item label {
+    display: block;
+    font-size: 2rem;
+}
+
+.form__item input {
+    padding: .5rem;
+    width: 100%;
+    border-bottom: 2px solid var(--black);
+    font-size: 2rem;
+}
+
+.form__item textarea {
+    font-family: var(--font-one);
+    padding: .5rem;
+    width: 100%;
+    border-bottom: 2px solid var(--black);
+    font-size: 2rem;
+}
+
+.submit {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
+}
+
+.footer {
+    background: var(--color-secondary);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer ul {
+    margin: 5rem 0;
+}
+
+.footer ul:nth-child(1) {
+    padding-top: 8rem;
+}
+
+.footer__social {
+    font-size: 4rem;
+}
+
+/************ LARGE TABLETS and LAPTOPS STYLES ****************/
+@media screen and (min-width:620px) {
+
+    .separator-top {
+        margin-top: 10rem;
+    }
+
+    .padding-vertical {
+        padding: 10rem 0;
+    }
+
+
+    .nav__menu label {
+        display: none;
+    }
+
+    .nav__menu ul {
+        all: unset;
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav__menu ul li a:hover {
+        border-bottom: 2px solid var(--color-primary);
+    }
+
+    .hero__text {
+        grid-column: 1/4;
+        justify-content: center;
+    }
+
+    .hero__text .btn {
+        align-self: flex-start;
+    }
+
+    .hero__img {
+        grid-column: 4/7;
+    }
+
+    .cards__item {
+        grid-column: span 2;
+    }
+
+    .gallery img {
+        grid-column: span 2;
+    
+    }
+
+    .contact__form form {
+        grid-column: 2/6;
+    }
+
+    .footer__links {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer ul:nth-child(1) {
+        padding-top: 0;
+    }
+
+}
+
+   
+
+/************ DESKTOP STYLES ****************/
+@media screen and (min-width:1200px) {
+
+
+
+}
